@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./contact.css";
 
 //icons
@@ -6,7 +6,26 @@ import { HiOutlineMail } from "react-icons/hi";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { TiSocialSkypeOutline } from "react-icons/ti";
 
+// emailjs
+import emailjs from "@emailjs/browser";
+
 const Contact = () => {
+  const formRef = useRef();
+
+  // ================= EMAILJS FUNCTION ===========================
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm(
+      "service_2va87p6",
+      "template_uvezbuq",
+      formRef.current,
+      "UpLuGyUPvJTR43Mwm"
+    );
+
+    e.target.reset();
+  };
+
   return (
     <section id="contact">
       <div className="container contact__container">
@@ -49,7 +68,7 @@ const Contact = () => {
           </article>
         </div>
 
-        <form action="">
+        <form onSubmit={sendEmail} ref={formRef}>
           <input
             type="text"
             name="name"
