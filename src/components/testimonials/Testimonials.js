@@ -4,15 +4,15 @@ import avatar2 from '../../assets/avatar2.png';
 import avatar3 from '../../assets/avatar3.png';
 import avatar4 from '../../assets/avatar4.png';
 import './testimonials.css'
-// import Swiper core and required modules
-import { Pagination, Navigation } from 'swiper';
+// import required modules
+import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Testimonials = () => {
   const data = [
@@ -47,10 +47,12 @@ const Testimonials = () => {
       <h5>Review from clients</h5>
       <h2>Testimonials</h2>
       <Swiper
-        modules={[ Pagination, Navigation ]}
-        navigation
-        spaceBetween={40}
-        slidesPerView={1}
+                cssMode={true}
+                navigation={true}
+                pagination={true}
+                mousewheel={true}
+                keyboard={true}
+                modules={[Navigation, Pagination, Mousewheel, Keyboard]}
       className="container testimonials__container">
         {data.map(({ avatar, name, review }, index) => {
           return (
