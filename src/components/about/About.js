@@ -1,6 +1,6 @@
 import React from "react";
 import "./about.css";
-import me from "../../assets/me.JPG";
+import js3 from "../../assets/js3.png";
 import { FaAward } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
@@ -14,7 +14,7 @@ const About = () => {
       <div className="container about__container">
         <div className="about__me">
           <div className="about__me-image">
-            <img src={me} alt="about me" />
+            <img src={js3} className='js__logo' alt="about me" />
           </div>
         </div>
 
@@ -23,17 +23,17 @@ const About = () => {
             <article className="about__card">
               <FaAward className="about__icon" />
               <h5>experience</h5>
-              <small>0 year experience</small>
+              <small>* year experience</small>
             </article>
             <article className="about__card">
               <FiUser className="about__icon" />
               <h5>experience</h5>
-              <small>0 year experience</small>
+              <small>* year experience</small>
             </article>
             <article className="about__card">
               <VscFolderLibrary className="about__icon" />
               <h5>experience</h5>
-              <small>0 year experience</small>
+              <small>* year experience</small>
             </article>
           </div>
 
